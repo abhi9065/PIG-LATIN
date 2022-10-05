@@ -30,7 +30,7 @@ function clickhandler(){
     .then(response => response.json())
     .then(json => console.log(json.contents.translated))
     .catch(errorHandler)
-    outputDiv.innerText = "welcome" + txtInput.value
+    outputDiv.innerText = txtInput.value
     
     };
 
