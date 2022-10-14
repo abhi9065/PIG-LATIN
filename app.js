@@ -3,7 +3,7 @@ var txtInput = document.querySelector("#txt-input");
 var outputDiv = document.querySelector("#output");
 
 
-var serverURL = ""
+var serverURL = "https://api.funtranslations.com/translate/pig-latin.json"
 
 function getTranslationURL(text){
 
@@ -30,15 +30,15 @@ function clickhandler(){
     fetch(getTranslationURL(inputText))
     .then(response => response.json())
     .then(json => { 
-     var translatedText =  json.contents.translated
-    outputDiv.innerText =  translatedText } )
+     var translatedText =  json.contents.translated;
+    outputDiv.innerText =  translatedText
+ })
 
+    .catch(errorHandler)
     
-    
-    };
+    }
 
-
-    
+ 
 
 btnTranslate.addEventListener("click", clickhandler);
 
